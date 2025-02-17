@@ -43,10 +43,6 @@ frame_count += 1
 
 # Capture frame-by-frame ret, frame = cap.read() cv2.imshow("aj", frame) frames.append(frame)
 
-
-
-
-
 if cv2.waitKey(25) & 0xFF == ord('q'): break
 
 if ret:
@@ -78,18 +74,7 @@ boxes = [] confidences = [] classIDs = [] centers = []
 
 # extract the class ID and confidence (i.e., probability) of # the current object detection
 
-scores = detection[5:] classID = np.argmax(scores) confidence = scores[classID]
-
-
-
-
-
-
-to the actually bounding
-
-
-
-box.astype("int")
+scores = detection[5:] classID = np.argmax(scores) confidence = scores[classID] to the actually bounding box.astype("int")
 
 # filter out weak predictions by ensuring the detected # probability is greater than the minimum probability if confidence > 0.5:
 
@@ -98,21 +83,7 @@ box.astype("int")
 # returns the center (x, y)-coordinates of the
 
 
-# box followed by the boxes' width and height box = detection[0:4] * np.array([W, H, W, H]) (centerX, centerY, width, height) =
-
-
-
-
-
-
-
-and
-
-
-
-
-
-confidences,
+# box followed by the boxes' width and height box = detection[0:4] * np.array([W, H, W, H]) (centerX, centerY, width, height) = and confidences,
 
 # use the center (x, y)-coordinates to derive the top
 
